@@ -2,7 +2,6 @@
 
 from nn_class_version_1 import nn
 from helper_functions import *
-from dnn_app_utils_v2 import load_data
 
 train_x_orig, Y_train, test_x_orig, test_y, classes = load_data()
 train_x_flatten = train_x_orig.reshape(train_x_orig.shape[0],-1).T
