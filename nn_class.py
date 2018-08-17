@@ -1,8 +1,6 @@
 import numpy as np
 from helper_functions import *
 import random
-# from planar_utils import plot_decision_boundary, sigmoid, load_planar_dataset, load_extra_datasets
-from dnn_app_utils_v2 import load_data
 import matplotlib.pyplot as plt
 random.seed(1)
 
