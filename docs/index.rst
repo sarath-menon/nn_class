@@ -4,18 +4,13 @@
    contain the root `toctree` directive.
 
 #########################
-Don't be afraid to commit
+Not another numpy Neural Network library
 #########################
 
 Introduction
 ============
 
-A workshop/tutorial for Python/Django developers who would like to contribute
-more to the projects they use, but need more grounding in some of the tools
-required.
-
-The workshop will take participants through the complete cycle of identifying a simple issue in a
-Django or Python project, writing a patch with documentation, and submitting it.
+The main idea behind building the library was to promote
 
 The purpose of the workshop
 ---------------------------
