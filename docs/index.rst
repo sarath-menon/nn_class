@@ -4,18 +4,18 @@
    contain the root `toctree` directive.
 
 #########################
-Not another numpy Neural Network library
+A Numpy Neural Network library and much more
 #########################
 
 Introduction
 ============
 
-A libray which focuses on intuitions and visualizations of neural networks implemented in raw numpy code
+A libray which focuses on intuitions and visualizations of neural networks implemented in raw numpy code.
 
 Why it matters
 ============
 
-1.A minimalist and intuitive API similar to pytorch and keras
+1. A minimalist and intuitive API similar to pytorch and keras
 
 The purpose of the workshop
 ---------------------------
