@@ -1,0 +1,1 @@
+Search.setIndex({docnames:["index"],envversion:52,filenames:["index.rst"],objects:{},objnames:{},objtypes:{},terms:{CMS:0,arkestra:0,contribut:0,daniel:0,develop:0,django:0,index:0,modul:0,page:0,procida:0,search:0,user:0},titles:["Welcome to nn_class_docs\u2019s documentation!"],titleterms:{about:0,all:0,document:0,indic:0,nn_class_doc:0,tabl:0,welcom:0}})
