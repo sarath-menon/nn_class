@@ -16,6 +16,8 @@ Why it matters
 ============
 
 1. A minimalist and intuitive API similar to pytorch and keras
+2. Compare perfomace of different optimizers easily
+3. Plot the hidden layers as weights effortlessly to visualize how image reocognition models work
 
 The purpose of the workshop
 ---------------------------
@@ -23,6 +25,9 @@ The purpose of the workshop
 **Don't be afraid to commit** will help put you in a position to commit
 successfully to collaborative projects.
 
-You'll find it particularly useful if you think you have some good coding
-ideas, but find that managing the development process sometimes gets in the
-way of your actual development.
+Contents
+========
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
