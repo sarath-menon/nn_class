@@ -10,7 +10,12 @@ Not another numpy Neural Network library
 Introduction
 ============
 
-The main idea behind building the library was to promote
+A libray which focuses on intuitions and visualizations of neural networks implemented in raw numpy code
+
+Why it matters
+============
+
+1.A minimalist and intuitive API similar to pytorch and keras
 
 The purpose of the workshop
 ---------------------------
