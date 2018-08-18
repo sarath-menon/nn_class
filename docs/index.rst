@@ -43,7 +43,13 @@ Contents
    :maxdepth: 2
    :caption: Initialization
    
-   About Initialization <Initialization>
+   Initialization <Initialization>
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Forward propogation
+   
+   About Forward prop<forward_prop>
    
 .. toctree::
    :maxdepth: 2
