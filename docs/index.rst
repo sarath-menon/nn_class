@@ -41,7 +41,7 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :captions: Initialization
+   :caption: Initialization
    
    About Initialization <Initialization>
    
