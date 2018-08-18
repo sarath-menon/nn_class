@@ -13,6 +13,6 @@ Forward prop
 Arguments  
  --------------
  
- - disp == True: Display the output each time the function is calles
+ - disp == True: Display the output each time the function is called
 
  
