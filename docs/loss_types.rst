@@ -4,7 +4,7 @@ Types of Loss Functions
 
 
 1) Mean squared error
-=====================
+----------
  
  It is the most basic loss function .It just calculates the difference between the actual and prediced values and squares it.
  
@@ -30,7 +30,7 @@ Arguments
  - Plot loss == True : Plots how the loss varies as the network is trained  
 
 2) Cross entropy loss
-=====================
+----------
  
  Used for binary classificarion problems ,ie, prediciting the correct output label of input data which may belong to any of two input classes
 
