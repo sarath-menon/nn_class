@@ -18,7 +18,7 @@ several problems associated with them and nobody could get it to work really wel
 
  - **Problem 1 :** Consider that the problem is to classify male and female voice.Going by old Ml techniques the first step would be to find out among the general properties of sound such as frequeny ,amplitude ,bass etc ,one that of differentiates them the most which would be frequency in this case.Such Properties of data are called features in ML.Now ,consider a database of voices of people speaking in different accents ,background noise etc.This causes a lot of confusion as to which features to select.Even in the male category voices of children might sometimes be interpreted as that of females due to the relatively high frequency. **We need to manually select the best features and this is a very hard ,ambiguous process.** The evolution of a separate field of study called **Feature Engineering** exemplifies this headache.
 
- |- **Problem 2 :** Consider that the problem is to recognize human faces.The traditional Ml method used for  this would be SVM[Support vector machine].It works be separating groups of input features.For instance ,one category might consist of with and without spectacles and another might be with sunglasses and without hair.As the complexity of the dataset increases,you can imagine that **no of categories would increase and prediction accuracy would decrease exponentially with size of the dataset**
+ -| **Problem 2 :** Consider that the problem is to recognize human faces.The traditional Ml method used for  this would be SVM[Support vector machine].It works be separating groups of input features.For instance ,one category might consist of with and without spectacles and another might be with sunglasses and without hair.As the complexity of the dataset increases,you can imagine that **no of categories would increase and prediction accuracy would decrease exponentially with size of the dataset**
 
 
 
@@ -27,10 +27,8 @@ Neural Networks
 
 **Inspired by the brain :** The first thing that comes to our mind on hearing the term 'Neural' is the connection to the human brain and yes it is true.Deep learning is inspired by the millions of neurons and interconnections in the brain.However in the present scenario , **deep learning is to the human brain as bird flight is to aeroplanes.** Both perform the same function but the method is better.Having said that ,it widely accepted even by godfathers of deep learning that the present methods are far from optimal.Hence ,there is ** no guarantee of the analogy holding in the future.** There have been breakthrough developments recently in the field that are largely inspired by neuroscience and the trend is expexted to continue.
 
-|**Just math :** Neural networks are really just a bunch of mathematical equations implemented in code.Theoretically ,it would be possible to implement all neural network computations on paper but thankfully ,we have computers to do it much faster for us.Each aspect of a neural network can be related to a particular field in math
+**Just math :** Neural networks are really just a bunch of mathematical equations implemented in code.Theoretically ,it would be possible to implement all neural network computations on paper but thankfully ,we have computers to do it much faster for us.Each aspect of a neural network can be related to a particular field in math
 
   **Structure of the network and computations :** Linear algebra [Matrices and related operations]
   **Process of learning :** Calculus [Mostly gradients and derivatives]
   **Stochastic nature of predictions :** Probabiility [For instance bayes]
-
-  
