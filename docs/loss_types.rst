@@ -28,6 +28,7 @@ Arguments
  
  - loss_type : Type of loss funtion
  - Plot loss == True : Plots how the loss varies as the network is trained  
+ 
 
 
 2) Cross entropy loss
@@ -56,37 +57,3 @@ Arguments
  - loss_type : Type of loss funtion
  - Plot loss == True : Plots how the loss varies as the network is trained  
  
-===============
- Section Title
-===============
-
----------------
- Section Title
----------------
-
-Section Title
-=============
-
-Section Title
--------------
-
-Section Title
-`````````````
-
-Section Title
-'''''''''''''
-
-Section Title
-.............
-
-Section Title
-~~~~~~~~~~~~~
-
-Section Title
-*************
-
-Section Title
-+++++++++++++
-
-Section Title
-^^^^^^^^^^^^^
