@@ -29,7 +29,7 @@ Neural Networks
 Inspired by the brain
 ----------------------
 
-The first thing that comes to our mind on hearing the term 'Neural' is the connection to the human brain and yes it is true.Deep learning is inspired by the millions of neurons and interconnections in the brain.However in the present scenario , **deep learning is to the human brain as bird flight is to aeroplanes.** Both perform the same function but the method is better.Having said that ,it widely accepted even by godfathers of deep learning that the present methods are far from optimal.Hence ,there is ** no guarantee of the analogy holding in the future.** There have been breakthrough developments recently in the field that are largely inspired by neuroscience and the trend is expexted to continue.
+The first thing that comes to our mind on hearing the term 'Neural' is the connection to the human brain and yes it is true.Deep learning is inspired by the millions of neurons and interconnections in the brain.However in the present scenario , **deep learning is to the human brain as bird flight is to aeroplanes.** Both perform the same function but the method is better.Having said that ,it widely accepted even by godfathers of deep learning that the present methods are far from optimal.Hence ,there is **no guarantee of the analogy holding in the future.** There have been breakthrough developments recently in the field that are largely inspired by neuroscience and the trend is expexted to continue.
 
 Just math
 ----------
