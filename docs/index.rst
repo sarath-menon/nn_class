@@ -55,7 +55,7 @@ Contents
    :maxdepth: 2
    :caption: Loss Functions 
    
-   loss_functions/loss_types
+   loss_functions/index
    
 .. toctree::
    :maxdepth: 2
