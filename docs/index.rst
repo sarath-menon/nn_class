@@ -55,8 +55,7 @@ Contents
    :maxdepth: 2
    :caption: Loss Functions 
    
-   About loss functions <loss functions/loss_functions>
-   Types of loss functions<loss functions/loss_types>
+   loss functions/loss_types
    
 .. toctree::
    :maxdepth: 2
