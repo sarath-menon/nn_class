@@ -15,15 +15,4 @@ Arguments
  - Plot loss == True : Plots how the loss varies as the network is trained  
 
 
-Types of loss functions
-============
 
-1) Mean squared error
- =====================
- 
- It is the most basic loss function .It just calculates the difference between the actual and prediced values and sqaures it.
-
-
-
-2) Cross entropy loss
- =====================
