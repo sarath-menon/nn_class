@@ -3,10 +3,9 @@ Neural networks aka deep learning
 ##############
 
 The first step to understanding neural networks is to be clear about the terms Artificial Intelligence ,Machine learning and 
-deep learning. **AI** includes practically any techinique that **empowers a mcahine to take intelligent decisions 
-without being expicitly programmed**. ***Machine learning*** resides within Ai and refers specifically to a range of tools that 
-allow themachine to be *intelligent through learning* . ***Deep learning *** happens to be a part of machine learning that exploits
-*specific tools called Neural Networks* to make it work.
+Deep learning. **AI** includes practically any techinique that *empowers a machine to take intelligent decisions 
+without being expicitly programmed*. **Machine learning** resides within AI and refers specifically to a range of tools that 
+allow machines to be *intelligent through learning* . **Deep learning ** happens to be a part of machine learning that exploits *specific tools called Neural Networks* to make it work.
 
 *	create a GitHub account
 *	create your own fork of a repository
