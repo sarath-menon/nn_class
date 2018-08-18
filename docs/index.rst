@@ -50,9 +50,7 @@ Contents
    :caption: Loss Functions 
    
    About loss functions <loss_functions>
-   Mean squared error loss
-   Binary Cross entropy loss
-   Cross entropy loss
+   Types of loss functions<loss_types.
    
 .. toctree::
    :maxdepth: 2
