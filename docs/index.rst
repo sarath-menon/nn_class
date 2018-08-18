@@ -38,6 +38,12 @@ Contents
    :caption: Getting started
    
    Why it exsists <getting_started>
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Neural Networks
+   
+   nn_intro   
 
 .. toctree::
    :maxdepth: 2
