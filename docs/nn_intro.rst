@@ -10,7 +10,7 @@ without being expicitly programmed*. **Machine learning** resides within AI and 
 Before Deep learning
 =====================
 
-Deep learning now constitutes most of machine learning and both advancements and econimic value generated are growing exponentially ,but this was not always the case.Even in the last decade ,most of the ML community was concerened with several 
+Deep learning now constitutes most of machine learning and both advancements and econimic value generated are growing exponentially ,but this was not always the case.Even in the last decade most of the ML community was concerened with several 
 now obsolete techniques such as kNN ,SVM and random forests.But these techinques had several problems associated with them and
 nobody could get it to work really well on any problem that mattered in real life.Let me demostrate them through two examples
 
