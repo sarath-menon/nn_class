@@ -35,9 +35,33 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :titlesonly:
+   :captions: Getting started
    
-   Getting started <getting_started>
-   Initialization
-   Loss Functions <loss_functions>
-   Optimizers <optimizers>
+   Why it exsists <getting_started>
+
+.. toctree::
+   :maxdepth: 2
+   :captions: Initialization
+   
+   About Initialization <Initialization>
+   
+.. toctree::
+   :maxdepth: 2
+   :captions: Loss Functions 
+   
+   About loss functions <loss_functions>
+   Mean squared error loss
+   Binary Cross entropy loss
+   Cross entropy loss
+   
+.. toctree::
+   :maxdepth: 2
+   :captions: Optimizers 
+   
+   About Optimizers <optimizers>
+   Gradient descent 
+   Momentum
+   RMSprop
+   Adam
+   
+   
