@@ -4,7 +4,7 @@ Types of Loss Functions
 
 
 1) Mean squared error
-----------
+`````````````
  
  It is the most basic loss function .It just calculates the difference between the actual and prediced values and squares it.
  
