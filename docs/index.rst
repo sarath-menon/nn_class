@@ -37,11 +37,8 @@ Contents
    :maxdepth: 2
    :titlesonly:
    
-   What you need to know and have installed before you begin <prerequisites>
-   virtualenv
+   Getting started <prerequisites>
+   Initialization
    git/index
-   documentation
-   Contributing your work <contributing>
-   Cheatsheet - a handy summary of key commands and techniques <cheatsheet>
-   A record of people who attended a workshop or followed the tutorial <attendance_record>
-   Notes for anyone planning a workshop <notesforplanners>
+   Loss Functions <loss_functions>
+   Optimizers <contributing>
