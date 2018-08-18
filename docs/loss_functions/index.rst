@@ -16,7 +16,8 @@ Arguments
  - Plot loss == True : Plots how the loss varies as the network is trained  
  
  
- 
+ Contents
+=======================
 
 .. toctree::
    :maxdepth: 1
