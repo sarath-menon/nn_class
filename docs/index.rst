@@ -39,6 +39,5 @@ Contents
    
    Getting started <prerequisites>
    Initialization
-   git/index
    Loss Functions <loss_functions>
    Optimizers <contributing>
