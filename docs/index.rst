@@ -35,7 +35,7 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :captions: Getting started
+   :caption: Getting started
    
    Why it exsists <getting_started>
 
@@ -47,7 +47,7 @@ Contents
    
 .. toctree::
    :maxdepth: 2
-   :captions: Loss Functions 
+   :caption: Loss Functions 
    
    About loss functions <loss_functions>
    Mean squared error loss
@@ -56,7 +56,7 @@ Contents
    
 .. toctree::
    :maxdepth: 2
-   :captions: Optimizers 
+   :caption: Optimizers 
    
    About Optimizers <optimizers>
    Gradient descent 
