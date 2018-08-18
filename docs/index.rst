@@ -37,7 +37,7 @@ Contents
    :maxdepth: 2
    :titlesonly:
    
-   Getting started <prerequisites>
+   Getting started <getting_started>
    Initialization
    Loss Functions <loss_functions>
-   Optimizers <contributing>
+   Optimizers <optimizers>
