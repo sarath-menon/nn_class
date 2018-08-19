@@ -9,6 +9,11 @@ refers specifically to a range of tools that promote *intelligence through learn
 happens to be a part of machine learning that exploits *specific tools called* **Neural Networks** to make
 it work.
 
+Intution
+=====================
+
+
+
 
 Before Deep learning
 =====================
@@ -23,7 +28,7 @@ several problems associated with them and nobody could get it to work really wel
 
 
 
-Neural Networks
+Neural Networksg
 =======================
 
 Inspired by the brain
@@ -45,4 +50,13 @@ Neural networks are really just a bunch of mathematical equations implemented in
 No feature selection
 ----------------------
 
-Remeber the problem of feature selection ? The main diference between neural networks and old ML techniques is that we don't need to select specific features 
+Remeber the problem of feature selection ? The main diference between neural networks and old ML techniques is that we don't need to select specific features to input.Instad ,we can input all the data features and the nework decides which ones are really important:
+
+**Visual recognition :** We input all the image pixels.In case of 720p ,it would be 1280 X 720 = 921600 inputs.
+
+**Audio processing:** We can directly input the audio file in time domain or frequency domain
+
+Software 2.0
+--------------
+
+Deep learning has been referred to by Andrej Karpathy ,a leading AI researcher as Software 2.0.Accrding to him ,Software 1.0 consists of all the code that was written in langauges such as C++ ,python ,javascrpt etc in which the method has been explicitly specified.Although the structure of the network is written on Software 1.0 languages ,the method is the language of weights and these weights are learnt ,not programmed.
