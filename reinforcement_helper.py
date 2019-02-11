@@ -5,7 +5,7 @@ def random_sampling(action_space):
     return action
 
 
-def gradient_ascent(self ,optimizer ,beta):
+def gradient_ascent(self ,optimizer ,beta):        A = np.array(A,shape=(1,1))
     for l in range(len(self.hidden_layers)+1):
         if (optimizer == 'Momentum'):
             if ("v_dW" + str(l+1)) in self.v_grad != None :

@@ -2,11 +2,12 @@ import numpy as np
 from helper_functions import *
 import random
 import matplotlib.pyplot as plt
+import cloudpickle as pickle
 random.seed(1)
 
 class nn:
     '''Basic neural network'''
-    def __init__(self ,X ,Y ,Plot_loss=True):
+    def __init__(self ,X_shape ,Y_shape ,Plot_loss=True):
         self.hidden_layers = []
         self.activation_functions = []
         self.parameters = {}
@@ -14,22 +15,21 @@ class nn:
         self.v_grad = {}
         self.Plot_loss = Plot_loss
         if self.Plot_loss==True : self.loss_cache = []
-        self.X_train = X
-        self.Y_train = Y
+        self.X_train_shape = X_shape
+        self.Y_train_shape = Y_shape
         self.y_pred = None
-        self.m = X.shape[1]
-        print('Input size :{},Output size :{} ,No of examples :{}'.format(X.shape[0],Y.shape[0],X.shape[1]))
+        print('Input size :{},Output size :{} '.format(self.X_train_shape,self.Y_train_shape))
 
     def create_model(self):
         L = len(self.hidden_layers)
-        self.parameters['W1'] =np.random.randn(self.hidden_layers[0] ,self.X_train.shape[0]) / np.sqrt(self.X_train.shape[0])
+        self.parameters['W1'] =np.random.randn(self.hidden_layers[0] ,self.X_train_shape) / np.sqrt(self.X_train_shape)
         self.parameters['b1'] =np.random.randn(self.hidden_layers[0],1) / np.sqrt(self.hidden_layers[0])
 
         for l in range(len(self.hidden_layers)-1):
             self.parameters['W'+str(l+2)] = np.random.randn(self.hidden_layers[l+1],self.hidden_layers[l]) / np.sqrt(self.hidden_layers[l])
             self.parameters['b'+str(l+2)] = np.random.randn(self.hidden_layers[l+1],1) / np.sqrt(self.hidden_layers[l+1])
-        self.parameters['W'+str(L+1)] = np.random.randn(self.Y_train.shape[0],self.hidden_layers[L-1]) / np.sqrt(self.hidden_layers[L-1])
-        self.parameters['b'+str(L+1)] = np.random.randn(self.Y_train.shape[0],1) / np.sqrt(self.Y_train.shape[0])
+        self.parameters['W'+str(L+1)] = np.random.randn(self.Y_train_shape,self.hidden_layers[L-1]) / np.sqrt(self.hidden_layers[L-1])
+        self.parameters['b'+str(L+1)] = np.random.randn(self.Y_train_shape,1) / np.sqrt(self.Y_train_shape)
         for layer,weights in self.parameters.items():print(layer,':',weights.shape)
 
     def create_layer(self ,hidden_size,activation_function):
@@ -47,17 +47,20 @@ class nn:
             self.cache['A'+str(l+1)] = A
             self.cache['Z'+str(l+1)] = Z
             # print(self.activation_functions[l] ,l)
+        # print('ashape',A.shape)
         self.y_pred = A
 
     def loss_function(self):
-        cost = - np.sum(self.Y_train * np.log(self.y_pred) + (1 - self.Y_train) * np.log(1 - self.y_pred)) / self.m
+        # print(self.Y_train[:,0] ,self.y_pred[:,0],np.sum(self.y_pred[:,0]) )
+        cost = - np.sum(self.Y_train * np.log(self.y_pred) + (1 - self.Y_train) * np.log(1 - self.y_pred)) /self.m
         if self.Plot_loss==True : self.loss_cache.append(cost)
         print('loss:{}'.format(cost))
 
     def Backprop(self):
         L = len(self.hidden_layers)
         self.cache['A0'] = self.X_train
-        if self.activation_functions[L] == sigmoid : grad = self.y_pred - self.Y_train   # (n_y*m)
+        if (self.activation_functions[L] == sigmoid or self.activation_functions[L] ==softmax):
+            grad = self.y_pred - self.Y_train   # (n_y*m)
 
         for l in range(L+1):
             self.grads['dW'+str(L-l+1)] = np.dot(grad, self.cache['A'+str(L-l)].T) / self.m  # (ny*nh)
@@ -91,12 +94,47 @@ class nn:
         plt.legend()
         plt.show()
 
-    def train(self ,num_iterations=500 ,learning_rate=0.01 ,optimizer='Momentum' ,beta=0.9):
+    def train(self ,X , Y ,epochs=5 ,learning_rate=0.001 ,optimizer='Momentum' ,beta=0.9 ,batch_size=128):
+        self.m = X.shape[1]
+        print('Dataset size:{} '.format(self.m))
         self.learning_rate = learning_rate
         self.optimizer = optimizer
-        for i in range(num_iterations):
-            self.forward_prop()
+        for i in range(epochs):
+            for x in range(int(self.m/batch_size)+1):
+                self.X_train = X[:, batch_size*(x):batch_size*(x+1)]
+                self.Y_train = Y[:, batch_size*(x):batch_size*(x+1)]
+                self.forward_prop()
+                self.Backprop()
+                self.Optimizer(optimizer ,beta)
+                print('Completed iteration {} of {} and epoch {} of {}'.format(x+1,int(self.m/batch_size)+1,i+1,epochs))
             self.loss_function()
-            self.Backprop()
-            self.Optimizer(optimizer ,beta)
+            pickle.dump(self.parameters, open('save.p', 'wb'))
+            print('model saved')
         if self.Plot_loss==True : self.plot_loss()
+
+        def train(self ,X , Y ,learning_rate=0.001 ,optimizer='Momentum' ,beta=0.9 ,batch_size=128):
+            self.m = X.shape[1]
+            print('Dataset size:{} '.format(self.m))
+            self.learning_rate = learning_rate
+            self.optimizer = optimizer
+            for i in range(epochs):
+                for x in range(int(self.m/batch_size)+1):
+                    self.X_train = X[:, batch_size*(x):batch_size*(x+1)]
+                    self.Y_train = Y[:, batch_size*(x):batch_size*(x+1)]
+                    self.forward_prop()
+                    self.Backprop()
+                    self.Optimizer(optimizer ,beta)
+                    print('Completed iteration {} of {} and epoch {} of {}'.format(x+1,int(self.m/batch_size)+1,i+1,epochs))
+                self.loss_function()
+                pickle.dump(self.parameters, open('save.p', 'wb'))
+                print('model saved')
+            if self.Plot_loss==True : self.plot_loss()
+
+    def load_saved_model(self, filename):
+        self.parameters = pickle.load(open(filename, 'rb'))
+
+    def predict(self ,A):
+        for l in range(len(self.hidden_layers)+1):
+           Z = np.dot(self.parameters['W'+str(l+1)] ,A) + self.parameters['b'+str(l+1)]
+           A = self.activation_functions[l](Z)
+        return A

@@ -29,6 +29,10 @@ def Relu_backward(dA1 ,Z1):
     dZ1[Z1 <= 0] = 0
     return dZ1
 
+def softmax(x):
+    norm  = np.exp(x) 
+    return np.divide(norm ,np.sum(norm,axis=0))
+
 def Optimizer(optimizer ,parameters ,grad ,learning_rate  ,v_grad ,beta=0.9):
     for l in range(len(parameters)-2):
         if (optimizer == 'Momentum'):

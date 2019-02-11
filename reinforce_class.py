@@ -2,49 +2,41 @@ import numpy as np
 from helper_functions import *
 import random
 import matplotlib.pyplot as plt
+from nn_class import nn
 random.seed(1)
 
 class reinforce(nn):
-    '''Basic neural network'''
-    def __init__(self ,X ,Y ,Plot_loss=True):
-        self.hidden_layers = []
-        self.activation_functions = []
-        self.parameters = {}
-        self.grads = {}
-        self.v_grad = {}
-        self.Plot_loss = Plot_loss
-        if self.Plot_loss==True : self.loss_cache = []
-        self.X_train = X
-        self.Y_train = Y
-        self.y_pred = None
-        self.m = X.shape[1]
-        print('Input size :{},Output size :{} ,No of examples :{}'.format(X.shape[0],Y.shape[0],X.shape[1]))
+    '''Basic REINFORCE Algorithm'''
+    def __init__(self ,X_shape ,Y_shape):
+        super().__init__(X_shape,Y_shape)
+        pass
+
+    def calc_discounted_reward(reward_book):
+        R = 0
+        for r in reversed(reward_book):
+            R = r + discount_factor * R
+            rewards.insert(0, R)
+        return rewards
+
+    def select_action(obs):
+        print('obs:{}'.format(obs))
+        obs.shape = (4,1)
+        action = net.predict(obs)
+        return action
 
     def random_sampling(action_space):
         action = np.random.randint(action_space)
         return action
 
-    def gradient_ascent(self ,optimizer ,beta):
-        for l in range(len(self.hidden_layers)+1):
-            if (optimizer == 'Momentum'):
-                if ("v_dW" + str(l+1)) in self.v_grad != None :
-                    self.v_grad["v_dW" + str(l+1)] = (beta * self.v_grad["v_dW" + str(l+1)]) +  0.9*self.grads["dW" + str(l+1)]
-                    self.v_grad["v_db" + str(l+1)] = (beta * self.v_grad["v_db" + str(l+1)]) +  0.9*self.grads["db" + str(l+1)]
+    def Backprop(self ,reward_multiplier):
+        L = len(self.hidden_layers)
+        self.cache['A0'] = self.X_train
+        if (self.activation_functions[L] == sigmoid or self.activation_functions[L] ==softmax):
+            grad = (self.y_pred - self.Y_train) * reward_multiplier  # (n_y*m)
 
-                    self.parameters["W" + str(l+1)] -= self.learning_rate * self.v_grad["v_dW" + str(l+1)]
-                    self.parameters["b" + str(l+1)] -= self.learning_rate * self.v_grad["v_db" + str(l+1)]
-
-                else:self.v_grad["v_dW" + str(l+1)] ,self.v_grad["v_db" + str(l+1)] = 0 ,0
-
-            if (optimizer == 'Gradient_descent'):
-                self.parameters["W" + str(l+1)] -= self.learning_rate * self.grads["dW" + str(l+1)]
-                self.parameters["b" + str(l+1)] -= self.learning_rate * self.grads["db" + str(l+1)]
-
-    def plot_loss(self):
-        plt.figure()
-        plt.title('Cross entropy loss')
-        plt.plot(self.loss_cache ,label=self.optimizer)
-        plt.xlabel('Iterations')
-        plt.ylabel('Loss')
-        plt.legend()
-        plt.show()
+        for l in range(L+1):
+            self.grads['dW'+str(L-l+1)] = np.dot(grad, self.cache['A'+str(L-l)].T) / self.m  # (ny*nh)
+            self.grads['db'+str(L-l+1)] = np.sum(grad, axis=1, keepdims=True) / self.m  # ny*1
+            if self.activation_functions[l] == Relu:
+                dA = np.dot(self.parameters['W'+str(L-l+1)].T, grad)
+                grad = Relu_backward(dA ,self.cache['Z'+str(L-l)])
