@@ -1,5 +1,7 @@
  A simple neural network library written entirely in numpy.Intended mainly for educational purposes.
  
+ Documentation - https://nn-class.readthedocs.io/en/latest/
+ 
  # Features
  
  1)Easy to use API identical to pytorch
